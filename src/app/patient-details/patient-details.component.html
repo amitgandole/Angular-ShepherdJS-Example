@@ -1,0 +1,36 @@
+<ng-container *ngFor="let patient of patients; let i = index">
+    <div class="row test-details-{{i}}">
+        <div class="col-sm p-3">
+            <strong>Test Name</strong> : {{patient.test_name}}
+        </div>
+        <div class="col-sm p-3">
+           <button class="btn btn-primary float-right mr-3" (click)="appTourService.startTour()">Start tour</button>
+        </div>
+    </div>
+    <div class="row namecard-{{i}}">
+        <div class="col-sm nopadding">
+            <app-namecard-stats [name]="patient.name" [contact_no]="patient.contact" [address]="patient.address" [designation]="patient.designation"></app-namecard-stats>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-sm nopadding emergency-details-{{i}}">
+            <app-emergency-card [name]="patient.emergency_contact.name" [relation]="patient.emergency_contact.relation" [contact]="patient.emergency_contact.contact"></app-emergency-card>
+        </div>
+        <div class="col-sm nopadding hospital-details-{{i}}">
+            <app-hospital-card [name]="patient.hospital_details.name" [speciality]="patient.hospital_details.speciality" [contact]="patient.hospital_details.contact"></app-hospital-card>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm nopadding  oxygen-details-{{i}}">
+            <app-oxy-stats [test_id]="patient.oxygen_level_details.test_id" [status]="patient.oxygen_level_details.status" [note]="patient.oxygen_level_details.Note"></app-oxy-stats>
+        </div>
+        <div class="col-sm nopadding  bpm-details-{{i}}">
+            <app-bpm-stats [test_id]="patient.bpm_level_details.test_id" [status]="patient.bpm_level_details.status" [note]="patient.bpm_level_details.note"></app-bpm-stats>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm nopadding  sugar-details-{{i}}">
+            <app-sugar-stats [test_id]="patient.sugar_level_details.test_id" [status]="patient.sugar_level_details.status" [note]="patient.sugar_level_details.note"></app-sugar-stats>
+        </div>
+    </div>
+</ng-container>

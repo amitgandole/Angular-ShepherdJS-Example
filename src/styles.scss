@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+
+.shepherd-modal-overlay-container{
+    height: 100vh !important;
+    opacity: .5 !important;
+    transition: all .3s ease-out,height 0s 0s,opacity .3s 0s !important;
+}
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+ }
